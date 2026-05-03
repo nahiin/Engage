@@ -204,8 +204,19 @@
                 });
             });
         });
+        // Mock Login Redirection for Prototype
+        document.querySelector('form[method="POST"]').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            const btn = this.querySelector('button[type="submit"]');
+            btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Signing in...';
+            btn.disabled = true;
+            setTimeout(() => {
+                window.location.href = 'admin-competitions.html';
+            }, 800);
+        });
     </script>
 </body>
+
 
 
 </html>

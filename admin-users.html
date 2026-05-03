@@ -297,8 +297,31 @@
 
             searchInput.addEventListener('input', performFilter);
             roleFilter.addEventListener('change', performFilter);
+
+            // Mock Form Submission
+            document.querySelector('form[method="POST"]').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const btn = this.querySelector('button[type="submit"]');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Saving...';
+                btn.disabled = true;
+
+                setTimeout(() => {
+                    btn.innerHTML = 'Success!';
+                    btn.classList.replace('btn-primary-custom', 'btn-success');
+                    setTimeout(() => {
+                        const modal = bootstrap.Modal.getInstance(document.getElementById('userModal'));
+                        modal.hide();
+                        // Reset button
+                        btn.innerHTML = originalText;
+                        btn.classList.replace('btn-success', 'btn-primary-custom');
+                        btn.disabled = false;
+                    }, 1000);
+                }, 800);
+            });
         });
     </script>
 </body>
+
 
 </html>
