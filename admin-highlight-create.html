@@ -23,7 +23,7 @@
 <body>
 
     <div id="admin-wrapper">
-        <!-- Sidebar Navigation -->
+        <!-- Sidebar Nav -->
         <nav id="sidebar">
             <div class="sidebar-header d-flex align-items-center justify-content-between">
                 <div class="auth-logo fs-4 m-0">Engage<span>U</span></div>
@@ -92,16 +92,18 @@
                                     <label class="form-label fw-semibold text-dark mb-3">Cover / Banner Image</label>
                                     <div class="upload-dropzone border border-2 rounded-4 p-5 text-center bg-light position-relative"
                                         style="border-style: dashed !important; cursor: pointer; transition: all 0.2s ease;">
-                                        <input type="file" name="image"
+                                        <input type="file" name="image" accept=".jpg,.jpeg,.png"
                                             class="position-absolute w-100 h-100 top-0 start-0 opacity-0"
                                             style="cursor: pointer; z-index: 10;">
+
                                         <div class="icon-wrapper-secondary d-inline-flex align-items-center justify-content-center p-3 rounded-circle bg-white shadow-sm mb-3"
                                             style="width: 60px; height: 60px;">
                                             <i class="bi bi-cloud-arrow-up fs-3 text-secondary"></i>
                                         </div>
                                         <h5 class="fw-bold mb-2 text-dark">Click to upload or drag and drop</h5>
-                                        <p class="text-muted small mb-0">SVG, PNG, JPG or GIF (Recommended size:
+                                        <p class="text-muted small mb-0">PNG and JPG only (Recommended size:
                                             1200x600px)</p>
+
                                     </div>
                                 </div>
 
@@ -155,15 +157,22 @@
                                 <div class="mb-4">
                                     <label class="form-label fw-semibold text-muted small">Summary</label>
                                     <div class="rich-text-wrapper border rounded bg-white">
-                                    <div class="rich-text-toolbar border-bottom bg-light p-2 d-flex gap-2">
-                                        <button type="button" class="btn btn-sm btn-light"><i class="bi bi-type-bold"></i></button>
-                                        <button type="button" class="btn btn-sm btn-light"><i class="bi bi-type-italic"></i></button>
-                                        <button type="button" class="btn btn-sm btn-light"><i class="bi bi-list-ul"></i></button>
-                                        <button type="button" class="btn btn-sm btn-light"><i class="bi bi-link-45deg"></i></button>
+                                        <div class="rich-text-toolbar border-bottom bg-light p-2 d-flex gap-2">
+                                            <button type="button" class="btn btn-sm btn-light"><i
+                                                    class="bi bi-type-bold"></i></button>
+                                            <button type="button" class="btn btn-sm btn-light"><i
+                                                    class="bi bi-type-italic"></i></button>
+                                            <button type="button" class="btn btn-sm btn-light"><i
+                                                    class="bi bi-list-ul"></i></button>
+                                            <button type="button" class="btn btn-sm btn-light"><i
+                                                    class="bi bi-link-45deg"></i></button>
+                                        </div>
+                                        <div class="rich-text-editor form-control border-0 shadow-none"
+                                            contenteditable="true"
+                                            data-placeholder="Detailed summary text for the highlight..."
+                                            style="min-height: 200px; padding: 1.25rem;"></div>
+                                        <textarea name="summary" class="d-none"></textarea>
                                     </div>
-                                    <div class="rich-text-editor form-control border-0 shadow-none" contenteditable="true" data-placeholder="Detailed summary text for the highlight..." style="min-height: 200px; padding: 1.25rem;"></div>
-                                    <textarea name="summary" class="d-none"></textarea>
-                                </div>
                                 </div>
 
                                 <div class="form-actions mt-5 pt-4 border-top">

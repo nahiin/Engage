@@ -27,8 +27,9 @@
                     <a href="admin-applications-list.html"><i class="bi bi-file-earmark-text"></i> Applications</a>
                 </li>
                 <li>
-                    <a href="admin-students.html"><i class="bi bi-people"></i> Students</a>
+                    <a href="admin-users.html"><i class="bi bi-people"></i> Users</a>
                 </li>
+
                 <li>
                     <a href="admin-highlights.html"><i class="bi bi-star"></i> Highlights</a>
                 </li>
@@ -180,8 +181,15 @@
                                             </div>
                                             
                                             <!-- Update File Input -->
-                                            <label class="form-label fw-semibold text-muted small mb-2">Upload New File (To Replace)</label>
-                                            <input class="form-control bg-white" type="file" name="proposal_file" accept=".pdf,.doc,.docx">
+                                            <div class="custom-file-upload">
+                                                <input type="file" class="d-none" name="proposal_file" id="proposalInput" accept=".pdf,.doc,.docx,.ppt,.pptx,.jpg,.jpeg,.png,.mp4">
+                                                <label for="proposalInput" class="form-control d-flex align-items-center p-0 overflow-hidden" style="cursor: pointer;">
+                                                    <span class="btn-file-custom">Choose File</span>
+                                                    <span class="file-name-placeholder ps-3">No file chosen</span>
+                                                </label>
+                                            </div>
+                                            <small class="text-muted mt-2 d-block">Supported: PDF, DOC, PPT, JPG, PNG, MP4</small>
+
                                         </div>
                                     </div>
                                     

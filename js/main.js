@@ -11,44 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
         sidebarCloseBtn.addEventListener('click', () => sidebar.classList.remove('active'));
     }
 
-    // 2. Auto-generate Avatars 
-    function getInitials(name) {
-        if (!name) return 'U';
-
-        if (name.includes('@')) {
-            // e.g., admin@pmu.edu.sa -> "AD", kshafique@pmu.edu.sa -> "KS"
-            const prefix = name.split('@')[0];
-            if (prefix.length >= 2) return prefix.substring(0, 2).toUpperCase();
-            return prefix.charAt(0).toUpperCase();
-        }
-
-        const parts = name.trim().split(/\s+/);
-        if (parts.length === 1) return parts[0].charAt(0).toUpperCase();
-        return (parts[0].charAt(0) + parts[1].charAt(0)).toUpperCase();
-    }
-
-    // Process all avatar elements
-    document.querySelectorAll('.avatar-circle, .avatar-circle-lg').forEach(avatar => {
-        let name = '';
-        const parent = avatar.parentElement;
-
-        if (parent) {
-            // Case 1: Top Navbar
-            if (parent.classList.contains('user-profile')) {
-                const nameEl = parent.querySelector('p.text-dark');
-                if (nameEl) name = nameEl.textContent;
-            }
-            // Case 2: Tables or Details Grids
-            else {
-                const nameEl = parent.querySelector('h6, h5');
-                if (nameEl) name = nameEl.textContent;
-            }
-        }
-
-        if (name) {
-            avatar.textContent = getInitials(name);
+    // 2. Process Navbar Avatars (Keeping only the top navbar initials if they exist)
+    document.querySelectorAll('.top-navbar .avatar-circle-lg').forEach(avatar => {
+        // Keeping simple placeholder logic for the admin profile only
+        if (!avatar.textContent.trim()) {
+            avatar.textContent = 'AD';
         }
     });
+
 
     // 3. Live Search
     const searchInput = document.getElementById('searchInput');

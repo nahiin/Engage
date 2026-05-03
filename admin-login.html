@@ -172,7 +172,7 @@
             document.getElementById('btnVerifyCode').addEventListener('click', () => {
                 const otp = Array.from(otpInputs).map(i => i.value).join('');
 
-                // Mock logic: Correct code is 123456
+                // Correct code is 123456
                 if (otp === '123456') {
                     errorMsg.classList.add('d-none');
                     step2.classList.add('d-none');
@@ -182,7 +182,7 @@
                 }
             });
 
-            // OTP Input focus management
+            // OTP Input
             otpInputs.forEach((input, index) => {
                 input.addEventListener('input', (e) => {
                     if (e.target.value.length > 0 && index < otpInputs.length - 1) {
