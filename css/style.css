@@ -541,7 +541,7 @@ body::before {
 }
 
 /* ==========================================================================
-   Custom File Upload (The "Ordinary Document" approach)
+   Custom File Upload  
    ========================================================================== */
 .custom-file-upload {
     position: relative;
@@ -743,7 +743,7 @@ body::before {
     outline: none;
 }
 
-/* Placeholder for contenteditable */
+/* Placeholder content forr edit */
 .rich-text-editor:empty:before {
     content: attr(data-placeholder);
     color: var(--text-muted);

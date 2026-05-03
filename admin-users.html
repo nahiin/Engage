@@ -33,20 +33,21 @@
             </div>
 
             <ul class="components">
-                <li >
+                <li>
                     <a href="admin-competitions.html"><i class="bi bi-trophy"></i> Competitions</a>
                 </li>
-                <li >
+                <li>
                     <a href="admin-applications-list.html"><i class="bi bi-file-earmark-text"></i> Applications</a>
                 </li>
                 <li class="active">
                     <a href="admin-users.html"><i class="bi bi-people"></i> Users</a>
                 </li>
-                <li >
+                <li>
                     <a href="admin-highlights.html"><i class="bi bi-star"></i> Highlights</a>
                 </li>
                 <li class="mt-4">
-                    <a href="admin-login.html" class="text-danger"><i class="bi bi-box-arrow-left"></i> Logout</a>
+                    <a href="login.html" class="text-danger"><i class="bi bi-box-arrow-left"></i> Logout</a>
+
                 </li>
             </ul>
         </nav>
@@ -78,13 +79,15 @@
                 <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
                     <div>
                         <h5 class="fw-bold mb-1">Users Directory</h5>
-                        <p class="text-muted small mb-0">Manage all registered students, professionals, and administrators.</p>
+                        <p class="text-muted small mb-0">Manage all registered students, professionals, and
+                            administrators.</p>
                     </div>
                     <div class="d-flex gap-2">
                         <button class="btn btn-light border border-2 fw-semibold text-dark">
                             <i class="bi bi-file-earmark-excel text-success me-2 fs-5"></i>Export
                         </button>
-                        <button class="btn btn-primary-custom d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#userModal">
+                        <button class="btn btn-primary-custom d-flex align-items-center" data-bs-toggle="modal"
+                            data-bs-target="#userModal">
                             <i class="bi bi-plus-lg me-2"></i>Create User
                         </button>
                     </div>
@@ -96,7 +99,8 @@
                         <div class="col-md-4">
                             <div class="input-group search-group">
                                 <span class="input-group-text"><i class="bi bi-search text-muted"></i></span>
-                                <input type="text" id="searchInput" class="form-control" placeholder="Search by name or email...">
+                                <input type="text" id="searchInput" class="form-control"
+                                    placeholder="Search by name or email...">
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -132,9 +136,13 @@
                                     <td><span class="text-muted small">Prince Mohammad Bin Fahd University</span></td>
                                     <td><span class="text-muted small">+966 50 123 4567</span></td>
                                     <td class="text-end pe-4">
-                                        <a href="admin-user-details.html" class="btn btn-light btn-action-icon me-1" title="View Profile"><i class="bi bi-person-badge"></i></a>
-                                        <button class="btn btn-light btn-action-icon me-1" title="Edit" data-bs-toggle="modal" data-bs-target="#userModal"><i class="bi bi-pencil"></i></button>
-                                        <button class="btn btn-light btn-action-icon text-danger" title="Delete"><i class="bi bi-trash"></i></button>
+                                        <a href="admin-user-details.html" class="btn btn-light btn-action-icon me-1"
+                                            title="View Profile"><i class="bi bi-person-badge"></i></a>
+                                        <button class="btn btn-light btn-action-icon me-1" title="Edit"
+                                            data-bs-toggle="modal" data-bs-target="#userModal"><i
+                                                class="bi bi-pencil"></i></button>
+                                        <button class="btn btn-light btn-action-icon text-danger" title="Delete"><i
+                                                class="bi bi-trash"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -145,9 +153,13 @@
                                     <td><span class="text-muted small">PMU Administration</span></td>
                                     <td><span class="text-muted small">+966 55 999 8888</span></td>
                                     <td class="text-end pe-4">
-                                        <a href="admin-user-details.html" class="btn btn-light btn-action-icon me-1" title="View Profile"><i class="bi bi-person-badge"></i></a>
-                                        <button class="btn btn-light btn-action-icon me-1" title="Edit" data-bs-toggle="modal" data-bs-target="#userModal"><i class="bi bi-pencil"></i></button>
-                                        <button class="btn btn-light btn-action-icon text-danger" title="Delete"><i class="bi bi-trash"></i></button>
+                                        <a href="admin-user-details.html" class="btn btn-light btn-action-icon me-1"
+                                            title="View Profile"><i class="bi bi-person-badge"></i></a>
+                                        <button class="btn btn-light btn-action-icon me-1" title="Edit"
+                                            data-bs-toggle="modal" data-bs-target="#userModal"><i
+                                                class="bi bi-pencil"></i></button>
+                                        <button class="btn btn-light btn-action-icon text-danger" title="Delete"><i
+                                                class="bi bi-trash"></i></button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -172,17 +184,20 @@
                         <div class="row">
                             <div class="col-md-6 mb-4">
                                 <label class="form-label fw-semibold text-muted small">Full Name</label>
-                                <input type="text" name="full_name" class="form-control" id="userName" placeholder="e.g. John Doe" required>
+                                <input type="text" name="full_name" class="form-control" id="userName"
+                                    placeholder="e.g. John Doe" required>
 
                             </div>
                             <div class="col-md-6 mb-4">
                                 <label class="form-label fw-semibold text-muted small">Email Address</label>
-                                <input type="email" name="email" class="form-control" id="userEmailInput" placeholder="e.g. jdoe@pmu.edu.sa" required>
+                                <input type="email" name="email" class="form-control" id="userEmailInput"
+                                    placeholder="e.g. jdoe@pmu.edu.sa" required>
 
                             </div>
                             <div class="col-md-6 mb-4">
                                 <label class="form-label fw-semibold text-muted small">Phone Number</label>
-                                <input type="tel" name="phone" class="form-control" id="userPhone" placeholder="+966 ...">
+                                <input type="tel" name="phone" class="form-control" id="userPhone"
+                                    placeholder="+966 ...">
 
                             </div>
                             <div class="col-md-6 mb-4">
@@ -197,19 +212,15 @@
                             </div>
                             <div class="col-md-6 mb-4">
                                 <label class="form-label fw-semibold text-muted small">University / Organization</label>
-                                <input type="text" name="organization" class="form-control" id="userOrg" placeholder="e.g. Prince Mohammad Bin Fahd University">
+                                <input type="text" name="organization" class="form-control" id="userOrg"
+                                    placeholder="e.g. Prince Mohammad Bin Fahd University">
                             </div>
                             <div class="col-md-6 mb-4">
                                 <label class="form-label fw-semibold text-muted small">Nationality</label>
-                                <input type="text" name="nationality" class="form-control" id="userNationality" placeholder="e.g. Saudi Arabian">
+                                <input type="text" name="nationality" class="form-control" id="userNationality"
+                                    placeholder="e.g. Saudi Arabian">
                             </div>
 
-                            <div class="col-12">
-                                <label class="form-label fw-semibold text-muted small">Temporary Password</label>
-                                <input type="password" name="password" class="form-control" placeholder="Leave blank to keep current">
-
-                                <small class="text-muted">Users will be prompted to change this on their next login.</small>
-                            </div>
                         </div>
                         <div class="d-flex gap-2 mt-5">
                             <button type="button" class="btn btn-cancel w-100" data-bs-dismiss="modal">Cancel</button>
@@ -235,7 +246,7 @@
 
             // Handle Edit Button Click
             document.querySelectorAll('.btn-action-icon[title="Edit"]').forEach(btn => {
-                btn.addEventListener('click', function() {
+                btn.addEventListener('click', function () {
                     const row = this.closest('tr');
                     const name = row.querySelector('h6').textContent.trim();
                     const role = row.querySelector('td:nth-child(2) .small').textContent.trim();
@@ -247,13 +258,13 @@
                     roleSelect.value = role;
                     orgInput.value = org;
                     document.getElementById('userPhone').value = phone;
-                    // Note: Email is not in the table, so we leave it empty for edit or fetch via ID in backend
+                    // 
                 });
             });
 
             // Handle Delete Confirmation
             document.querySelectorAll('.btn-action-icon.text-danger').forEach(btn => {
-                btn.addEventListener('click', function() {
+                btn.addEventListener('click', function () {
                     const row = this.closest('tr');
                     const userName = row.querySelector('h6').textContent.trim();
                     if (confirm(`Are you sure you want to delete ${userName}? This action cannot be undone.`)) {
@@ -264,7 +275,7 @@
                 });
             });
 
-            // Reset modal for "Create" button
+            // Reset  for create button
             document.querySelector('[data-bs-target="#userModal"]:not(.btn-action-icon)').addEventListener('click', () => {
                 modalTitle.textContent = 'Create New User';
                 nameInput.value = '';
@@ -282,15 +293,15 @@
             function performFilter() {
                 const search = searchInput.value.toLowerCase();
                 const role = roleFilter.value;
-                
+
                 document.querySelectorAll('tbody tr').forEach(row => {
                     const text = row.textContent.toLowerCase();
                     const rowRole = row.querySelector('td:nth-child(2) .small').textContent;
 
-                    
+
                     const matchesSearch = text.includes(search);
                     const matchesRole = role === '' || rowRole === role;
-                    
+
                     row.style.display = (matchesSearch && matchesRole) ? '' : 'none';
                 });
             }
@@ -299,7 +310,7 @@
             roleFilter.addEventListener('change', performFilter);
 
             // Mock Form Submission
-            document.querySelector('form[method="POST"]').addEventListener('submit', function(e) {
+            document.querySelector('form[method="POST"]').addEventListener('submit', function (e) {
                 e.preventDefault();
                 const btn = this.querySelector('button[type="submit"]');
                 const originalText = btn.innerHTML;
