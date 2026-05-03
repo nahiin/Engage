@@ -21,13 +21,13 @@
             </div>
             <ul class="components">
                 <li class="active">
-                    <a href="admin-competitions.html" ><i class="bi bi-trophy"></i> Competitions</a>
+                    <a href="admin-competitions.html"><i class="bi bi-trophy"></i> Competitions</a>
                 </li>
                 <li>
-                    <a href="admin-applications.html"><i class="bi bi-file-earmark-text"></i> Applications</a>
+                    <a href="admin-applications-list.html"><i class="bi bi-file-earmark-text"></i> Applications</a>
                 </li>
                 <li>
-                    <a href="admin-students.html"><i class="bi bi-people"></i> Students</a>
+                    <a href="admin-users.html"><i class="bi bi-people"></i> Users</a>
                 </li>
                 <li>
                     <a href="admin-highlights.html"><i class="bi bi-star"></i> Highlights</a>
@@ -146,12 +146,14 @@
                             <div class="col-md-6">
                                 <label class="form-label fw-semibold text-muted small">Poster Image</label>
                                 <div class="custom-file-upload">
-                                    <input type="file" class="d-none" name="poster" id="posterInput">
+                                    <input type="file" class="d-none" name="poster" id="posterInput" accept=".jpg,.jpeg,.png">
+
                                     <label for="posterInput" class="form-control d-flex align-items-center p-0 overflow-hidden" style="cursor: pointer;">
                                         <span class="btn-file-custom">Choose File</span>
                                         <span class="file-name-placeholder ps-3">No file chosen</span>
                                     </label>
                                 </div>
+                                <small class="text-muted">JPG or PNG only (Recommended: 1200x600px)</small>
 
                             </div>
                         </div>
@@ -161,26 +163,30 @@
                             <div class="col-md-6">
                                 <label class="form-label fw-semibold text-muted small">Attachments</label>
                                 <div class="custom-file-upload">
-                                    <input type="file" class="d-none" name="attachments" id="attachmentsInput" multiple>
+                                    <input type="file" class="d-none" name="attachments" id="attachmentsInput" multiple accept=".pdf,.doc,.docx,.ppt,.pptx,.jpg,.jpeg,.png,.mp4">
+
                                     <label for="attachmentsInput" class="form-control d-flex align-items-center p-0 overflow-hidden" style="cursor: pointer;">
                                         <span class="btn-file-custom">Choose File</span>
                                         <span class="file-name-placeholder ps-3">No file chosen</span>
                                     </label>
                                 </div>
 
-                                <small class="text-muted">Upload any additional files (PDF, DOCX).</small>
+                                <small class="text-muted">Supported: PDF, DOC, PPT, JPG, PNG, MP4</small>
+
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label fw-semibold text-muted small">Promotional Video</label>
                                 <div class="custom-file-upload">
-                                    <input type="file" class="d-none" name="video" id="videoInput" accept="video/*">
+                                    <input type="file" class="d-none" name="video" id="videoInput" accept=".mp4">
+
                                     <label for="videoInput" class="form-control d-flex align-items-center p-0 overflow-hidden" style="cursor: pointer;">
                                         <span class="btn-file-custom">Choose File</span>
                                         <span class="file-name-placeholder ps-3">No file chosen</span>
                                     </label>
                                 </div>
 
-                                <small class="text-muted">Upload a short intro video (MP4, MOV).</small>
+                                <small class="text-muted">MP4 format only.</small>
+
                             </div>
                         </div>
 

@@ -33,16 +33,16 @@
             </div>
 
             <ul class="components">
-                <li>
+                <li >
                     <a href="admin-competitions.html"><i class="bi bi-trophy"></i> Competitions</a>
                 </li>
-                <li>
+                <li >
                     <a href="admin-applications-list.html"><i class="bi bi-file-earmark-text"></i> Applications</a>
                 </li>
                 <li class="active">
                     <a href="admin-users.html"><i class="bi bi-people"></i> Users</a>
                 </li>
-                <li>
+                <li >
                     <a href="admin-highlights.html"><i class="bi bi-star"></i> Highlights</a>
                 </li>
                 <li class="mt-4">
@@ -167,36 +167,47 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body p-4">
-                    <form>
+                    <form action="#" method="POST">
+
                         <div class="row">
                             <div class="col-md-6 mb-4">
                                 <label class="form-label fw-semibold text-muted small">Full Name</label>
-                                <input type="text" class="form-control" id="userName" placeholder="e.g. John Doe" required>
+                                <input type="text" name="full_name" class="form-control" id="userName" placeholder="e.g. John Doe" required>
+
                             </div>
                             <div class="col-md-6 mb-4">
                                 <label class="form-label fw-semibold text-muted small">Email Address</label>
-                                <input type="email" class="form-control" id="userEmailInput" placeholder="e.g. jdoe@pmu.edu.sa" required>
+                                <input type="email" name="email" class="form-control" id="userEmailInput" placeholder="e.g. jdoe@pmu.edu.sa" required>
+
                             </div>
                             <div class="col-md-6 mb-4">
                                 <label class="form-label fw-semibold text-muted small">Phone Number</label>
-                                <input type="tel" class="form-control" id="userPhone" placeholder="+966 ...">
+                                <input type="tel" name="phone" class="form-control" id="userPhone" placeholder="+966 ...">
+
                             </div>
                             <div class="col-md-6 mb-4">
                                 <label class="form-label fw-semibold text-muted small">User Role</label>
-                                <select class="form-select" id="userRoleSelect">
+                                <select class="form-select" name="role" id="userRoleSelect">
+
                                     <option value="Student">Student</option>
                                     <option value="Admin">Admin</option>
                                     <option value="Professional">Professional</option>
                                     <option value="Educator">Educator</option>
                                 </select>
                             </div>
-                            <div class="col-12 mb-4">
+                            <div class="col-md-6 mb-4">
                                 <label class="form-label fw-semibold text-muted small">University / Organization</label>
-                                <input type="text" class="form-control" id="userOrg" placeholder="e.g. Prince Mohammad Bin Fahd University">
+                                <input type="text" name="organization" class="form-control" id="userOrg" placeholder="e.g. Prince Mohammad Bin Fahd University">
                             </div>
+                            <div class="col-md-6 mb-4">
+                                <label class="form-label fw-semibold text-muted small">Nationality</label>
+                                <input type="text" name="nationality" class="form-control" id="userNationality" placeholder="e.g. Saudi Arabian">
+                            </div>
+
                             <div class="col-12">
                                 <label class="form-label fw-semibold text-muted small">Temporary Password</label>
-                                <input type="password" class="form-control" placeholder="Leave blank to keep current">
+                                <input type="password" name="password" class="form-control" placeholder="Leave blank to keep current">
+
                                 <small class="text-muted">Users will be prompted to change this on their next login.</small>
                             </div>
                         </div>
@@ -226,16 +237,30 @@
             document.querySelectorAll('.btn-action-icon[title="Edit"]').forEach(btn => {
                 btn.addEventListener('click', function() {
                     const row = this.closest('tr');
-                    const name = row.querySelector('h6').textContent;
-                    const email = row.querySelector('td:nth-child(2) .small').textContent;
-                    const role = row.querySelector('.badge').textContent;
-                    const org = row.querySelector('td:nth-child(4) .small').textContent;
+                    const name = row.querySelector('h6').textContent.trim();
+                    const role = row.querySelector('td:nth-child(2) .small').textContent.trim();
+                    const org = row.querySelector('td:nth-child(3) .small').textContent.trim();
+                    const phone = row.querySelector('td:nth-child(4) .small').textContent.trim();
 
                     modalTitle.textContent = 'Edit User Account';
                     nameInput.value = name;
-                    emailInput.value = email;
                     roleSelect.value = role;
                     orgInput.value = org;
+                    document.getElementById('userPhone').value = phone;
+                    // Note: Email is not in the table, so we leave it empty for edit or fetch via ID in backend
+                });
+            });
+
+            // Handle Delete Confirmation
+            document.querySelectorAll('.btn-action-icon.text-danger').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const row = this.closest('tr');
+                    const userName = row.querySelector('h6').textContent.trim();
+                    if (confirm(`Are you sure you want to delete ${userName}? This action cannot be undone.`)) {
+                        row.classList.add('animate-fade-out');
+                        setTimeout(() => row.remove(), 400);
+                        // Backend delete logic would go here
+                    }
                 });
             });
 
@@ -246,7 +271,9 @@
                 emailInput.value = '';
                 roleSelect.value = 'Student';
                 orgInput.value = '';
+                document.getElementById('userNationality').value = '';
             });
+
 
             // Filter logic
             const searchInput = document.getElementById('searchInput');
@@ -258,7 +285,8 @@
                 
                 document.querySelectorAll('tbody tr').forEach(row => {
                     const text = row.textContent.toLowerCase();
-                    const rowRole = row.querySelector('.badge').textContent;
+                    const rowRole = row.querySelector('td:nth-child(2) .small').textContent;
+
                     
                     const matchesSearch = text.includes(search);
                     const matchesRole = role === '' || rowRole === role;
