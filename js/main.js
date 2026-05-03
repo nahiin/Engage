@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         sidebarCloseBtn.addEventListener('click', () => sidebar.classList.remove('active'));
     }
 
-    // 2. Process Navbar Avatars (Keeping only the top navbar initials if they exist)
+    // 2. Process Navbar Avatars 
     document.querySelectorAll('.top-navbar .avatar-circle-lg').forEach(avatar => {
         // Keeping simple placeholder logic for the admin profile only
         if (!avatar.textContent.trim()) {
@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     const url = prompt('Enter the link URL:');
                     if (url) document.execCommand('createLink', false, url);
                 }
-                
+
                 // Keep focus on editor
                 editor.focus();
                 // Sync after command
@@ -184,8 +184,8 @@ document.addEventListener("DOMContentLoaded", () => {
             editor.addEventListener('input', () => {
                 hiddenInput.value = editor.innerHTML;
             });
-            
-            // Handle paste as plain text (optional but recommended for basic RTE)
+
+            // Handle paste as plain text
             editor.addEventListener('paste', (e) => {
                 e.preventDefault();
                 const text = e.clipboardData.getData('text/plain');
